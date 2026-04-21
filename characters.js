@@ -312,7 +312,7 @@ window.characters = [
     originalName: "Homelander",
     source: "黑袍纠察队",
     image: createCharacterPlaceholder("祖国人", "#d9b448", "#7d1426"),
-    description: "你不是想发光，你是想让全世界只准看你。",
+    description: "超级巨婴，只是想让全世界看你爱你。",
     traits: {
       rational: 72,
       emotional: 88,

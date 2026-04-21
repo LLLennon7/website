@@ -80,6 +80,12 @@
 
   var fallbackImage = createFallbackImage("角色", "#9aa4b2", "#616b78");
 
+  function getCharacterById(id) {
+    return window.characters.find(function (character) {
+      return character.id === id;
+    });
+  }
+
   function createFallbackImage(name, colorA, colorB) {
     var safeName = escapeHtml(name);
     var svg =
@@ -262,9 +268,9 @@
 
     var cardsData = state.previewingResults
       ? [
-          { character: window.characters[0], match: 91 },
-          { character: window.characters[5], match: 86 },
-          { character: window.characters[22], match: 82 }
+          { character: getCharacterById("gilgamesh"), match: 91 },
+          { character: getCharacterById("homelander"), match: 86 },
+          { character: getCharacterById("gojo"), match: 82 }
         ]
       : state.currentResults;
 
@@ -309,9 +315,9 @@
   function copyShareText() {
     var results = state.previewingResults
       ? [
-          { character: window.characters[0], match: 91 },
-          { character: window.characters[5], match: 86 },
-          { character: window.characters[22], match: 82 }
+          { character: getCharacterById("gilgamesh"), match: 91 },
+          { character: getCharacterById("homelander"), match: 86 },
+          { character: getCharacterById("gojo"), match: 82 }
         ]
       : state.currentResults;
 
@@ -319,24 +325,19 @@
       return;
     }
 
-    var text =
-      "我刚测了一个虚拟角色人格测试：" +
-      "\n主角色：" + results[0].character.name + "（" + results[0].match + "%）" +
-      "\n第二人格：" + results[1].character.name + "（" + results[1].match + "%）" +
-      "\n隐藏人格：" + results[2].character.name + "（" + results[2].match + "%）" +
-      "\n你也来测测你最像谁。";
+    var text = window.location.href;
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function () {
-        copyShareButton.textContent = "已复制分享文案";
+        copyShareButton.textContent = "已复制测试链接";
         window.setTimeout(function () {
-          copyShareButton.textContent = "复制分享文案";
+          copyShareButton.textContent = "复制测试链接";
         }, 1800);
       });
       return;
     }
 
-    window.prompt("复制下面这段分享文案", text);
+    window.prompt("复制下面这个测试链接", text);
   }
 
   startTestButton.addEventListener("click", resetQuiz);

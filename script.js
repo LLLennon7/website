@@ -38,7 +38,23 @@
     // 执行力：想法能落地，做事能持续推进。
     execution: { label: "执行力" },
     // 恋爱脑：在感情里投入度高，容易被爱与关系牵引。
-    romance: { label: "恋爱脑" }
+    romance: { label: "恋爱脑" },
+    // 依赖渴求：渴望稳定陪伴、被坚定接住，不喜欢完全独自承担情绪和关系压力。
+    dependency: { label: "依赖渴求" },
+    // 现实主义：面对问题更看重成本、收益和实际可行性，不容易沉迷空想。
+    realism: { label: "现实主义" },
+    // 荒诞性：思维跳脱、黑色幽默感强，容易接受混乱、反常和戏剧化表达。
+    absurdity: { label: "荒诞性" },
+    // 勇气：面对风险和压力时更敢正面承担，不轻易退缩。
+    courage: { label: "勇气" },
+    // 自我主义：更倾向先保障自我利益、感受和目标，不轻易为他人让步。
+    egoism: { label: "自我主义" },
+    // 共情：容易感受到他人情绪与处境，并据此调整自己的反应与选择。
+    empathy: { label: "共情" },
+    // 决断力：面对复杂局面时能否迅速定夺，不长期摇摆拖延。
+    decisiveness: { label: "决断力" },
+    // 抗压能力：在高压、冲突和情绪拉扯下维持功能与判断的能力。
+    stressTolerance: { label: "抗压能力" }
   };
 
   var RESULT_SLOTS = [
@@ -119,13 +135,18 @@
       button.type = "button";
       button.className = "option-btn";
       button.innerHTML =
-        '<span class="option-index">' + ["A", "B", "C", "D"][index] + '</span>' +
+        '<span class="option-index">' + getOptionLabel(index) + '</span>' +
         '<span class="option-text">' + option.text + "</span>";
       button.addEventListener("click", function () {
         chooseOption(index);
       });
       optionsList.appendChild(button);
     });
+  }
+
+  function getOptionLabel(index) {
+    var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    return labels.charAt(index) || String(index + 1);
   }
 
   function chooseOption(optionIndex) {
@@ -207,7 +228,8 @@
     return window.characters
       .map(function (character) {
         var distance = Object.keys(DIMENSIONS).reduce(function (sum, key) {
-          return sum + Math.abs(userProfile[key] - character.traits[key]);
+          var traitValue = typeof character.traits[key] === "number" ? character.traits[key] : 0;
+          return sum + Math.abs(userProfile[key] - traitValue);
         }, 0);
 
         var match = Math.max(55, Math.round(100 - (distance / maxDistance) * 100));

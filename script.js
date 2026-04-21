@@ -335,6 +335,26 @@
       }
     }
 
+    if (percentages.length >= 3) {
+      // 结果展示做轻度戏剧化处理：主结果更突出，但不改变真实排序。
+      var boost = Math.min(10, Math.max(6, Math.round((percentages[1] + percentages[2]) * 0.15)));
+      var secondFloor = 18;
+      var thirdFloor = 12;
+      var reduceSecond = Math.min(
+        Math.max(0, percentages[1] - secondFloor),
+        Math.max(1, Math.round(boost * 0.35))
+      );
+      var reduceThird = Math.min(
+        Math.max(0, percentages[2] - thirdFloor),
+        boost - reduceSecond
+      );
+      var actualBoost = reduceSecond + reduceThird;
+
+      percentages[0] += actualBoost;
+      percentages[1] -= reduceSecond;
+      percentages[2] -= reduceThird;
+    }
+
     for (var k = 1; k < percentages.length; k += 1) {
       if (percentages[k - 1] <= percentages[k]) {
         var needed = percentages[k] - percentages[k - 1] + 1;

@@ -196,18 +196,22 @@
   function calculateUserProfile() {
     var totals = buildEmptyTraitMap();
     var maxPossible = buildEmptyTraitMap();
+    var averagePossible = buildEmptyTraitMap();
 
     window.questions.forEach(function (question, questionIndex) {
       var perQuestionMax = buildEmptyTraitMap();
+      var perQuestionSum = buildEmptyTraitMap();
 
       question.options.forEach(function (option) {
         Object.keys(option.effects).forEach(function (traitKey) {
           perQuestionMax[traitKey] = Math.max(perQuestionMax[traitKey], option.effects[traitKey]);
+          perQuestionSum[traitKey] += option.effects[traitKey];
         });
       });
 
       Object.keys(perQuestionMax).forEach(function (traitKey) {
         maxPossible[traitKey] += perQuestionMax[traitKey];
+        averagePossible[traitKey] += perQuestionSum[traitKey] / question.options.length;
       });
 
       var chosenAnswer = state.answers[questionIndex];
@@ -224,12 +228,23 @@
     var normalized = {};
     Object.keys(DIMENSIONS).forEach(function (key) {
       var maxScore = maxPossible[key];
+      var averageScore = averagePossible[key];
       if (!maxScore) {
         normalized[key] = 50;
         return;
       }
 
-      normalized[key] = Math.round((totals[key] / maxScore) * 100);
+      if (totals[key] <= averageScore) {
+        normalized[key] = averageScore
+          ? Math.round((totals[key] / averageScore) * 50)
+          : 50;
+      } else {
+        normalized[key] = maxScore > averageScore
+          ? Math.round(50 + ((totals[key] - averageScore) / (maxScore - averageScore)) * 50)
+          : 100;
+      }
+
+      normalized[key] = Math.max(0, Math.min(100, normalized[key]));
     });
 
     return normalized;
@@ -248,13 +263,17 @@
           var traitValue = typeof character.traits[key] === "number" ? character.traits[key] : 0;
           return sum + Math.abs(userProfile[key] - traitValue) * weights[key];
         }, 0);
+        var adjustedDistance =
+          distance +
+          calculatePeakPenalty(userProfile, character.traits) +
+          calculateGenericPenalty(character.traits);
 
-        var match = Math.max(55, Math.round(100 - (distance / maxDistance) * 100));
+        var match = Math.max(55, Math.round(100 - (adjustedDistance / maxDistance) * 100));
 
         return {
           character: character,
           match: match,
-          distance: distance
+          distance: adjustedDistance
         };
       })
       .sort(function (a, b) {
@@ -288,6 +307,35 @@
     });
 
     return weights;
+  }
+
+  function getTopTraitKeys(userProfile, count) {
+    return Object.keys(DIMENSIONS)
+      .sort(function (a, b) {
+        return userProfile[b] - userProfile[a];
+      })
+      .slice(0, count);
+  }
+
+  function calculatePeakPenalty(userProfile, characterTraits) {
+    var topKeys = getTopTraitKeys(userProfile, 5);
+
+    return topKeys.reduce(function (sum, key, index) {
+      var characterValue = typeof characterTraits[key] === "number" ? characterTraits[key] : 0;
+      var gap = Math.max(0, userProfile[key] - characterValue);
+      var importance = 1 - index * 0.12;
+
+      return sum + gap * importance * 0.12;
+    }, 0);
+  }
+
+  function calculateGenericPenalty(characterTraits) {
+    var distinctiveness = Object.keys(DIMENSIONS).reduce(function (sum, key) {
+      var value = typeof characterTraits[key] === "number" ? characterTraits[key] : 50;
+      return sum + Math.abs(value - 50);
+    }, 0) / Object.keys(DIMENSIONS).length;
+
+    return Math.max(0, 24 - distinctiveness) * 0.2;
   }
 
   function finishQuiz() {

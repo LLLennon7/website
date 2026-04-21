@@ -143,7 +143,7 @@ window.characters = [
     source: "海贼王",
     image: createCharacterPlaceholder("路飞", "#e0841b", "#9a2f13"),
     description: "你重感情、行动快、认定伙伴就会一路护到底，很多决定都来自本能和热血。",
-    traits: { rational: 22, emotional: 86, impulsive: 96, calm: 18, social: 87, solitary: 6, orderly: 12, rebellious: 92, ambitious: 71, altruistic: 95, humorous: 76, disguised: 4, moral: 82, conformist: 3, execution: 84, romance: 6, dependency: 18, realism: 18, absurdity: 57, courage: 98, egoism: 21, empathy: 84, decisiveness: 91, stressTolerance: 86 }
+    traits: { rational: 18, emotional: 88, impulsive: 97, calm: 14, social: 76, solitary: 5, orderly: 8, rebellious: 95, ambitious: 58, altruistic: 88, humorous: 62, disguised: 3, moral: 74, conformist: 2, execution: 72, romance: 5, dependency: 14, realism: 12, absurdity: 54, courage: 98, egoism: 18, empathy: 70, decisiveness: 82, stressTolerance: 73 }
   },
   {
     id: "naruto",
@@ -152,7 +152,7 @@ window.characters = [
     source: "火影忍者",
     image: createCharacterPlaceholder("鸣人", "#f5a623", "#f76b1c"),
     description: "你热情外放，认准的人和信念都不会轻易放弃，越被低估，越能打出自己的节奏。",
-    traits: { rational: 36, emotional: 88, impulsive: 82, calm: 29, social: 89, solitary: 9, orderly: 35, rebellious: 72, ambitious: 79, altruistic: 93, humorous: 62, disguised: 11, moral: 84, conformist: 12, execution: 86, romance: 31, dependency: 44, realism: 31, absurdity: 41, courage: 94, egoism: 22, empathy: 88, decisiveness: 83, stressTolerance: 72 }
+    traits: { rational: 32, emotional: 91, impulsive: 79, calm: 24, social: 78, solitary: 8, orderly: 28, rebellious: 68, ambitious: 68, altruistic: 84, humorous: 54, disguised: 8, moral: 79, conformist: 9, execution: 74, romance: 28, dependency: 52, realism: 24, absurdity: 36, courage: 83, egoism: 18, empathy: 79, decisiveness: 73, stressTolerance: 61 }
   },
   {
     id: "sasuke",
@@ -161,7 +161,7 @@ window.characters = [
     source: "火影忍者",
     image: createCharacterPlaceholder("佐助", "#5b6290", "#1d1f38"),
     description: "你有明显的目标导向，不喜欢过度解释，很多情绪都藏着走，行动比表达更有分量。",
-    traits: { rational: 74, emotional: 52, impulsive: 43, calm: 68, social: 18, solitary: 91, orderly: 46, rebellious: 78, ambitious: 90, altruistic: 28, humorous: 10, disguised: 58, moral: 49, conformist: 7, execution: 93, romance: 12, dependency: 11, realism: 67, absurdity: 12, courage: 81, egoism: 72, empathy: 19, decisiveness: 87, stressTolerance: 79 }
+    traits: { rational: 68, emotional: 58, impulsive: 39, calm: 61, social: 14, solitary: 94, orderly: 38, rebellious: 81, ambitious: 87, altruistic: 18, humorous: 8, disguised: 68, moral: 42, conformist: 5, execution: 84, romance: 9, dependency: 8, realism: 58, absurdity: 10, courage: 72, egoism: 79, empathy: 12, decisiveness: 79, stressTolerance: 72 }
   },
   {
     id: "ichigo",
@@ -170,7 +170,7 @@ window.characters = [
     source: "死神",
     image: createCharacterPlaceholder("一护", "#d96a28", "#422029"),
     description: "你看上去没那么爱张扬，但关键时刻很能扛，保护欲和行动力都很强，属于闷着顶的人。",
-    traits: { rational: 58, emotional: 74, impulsive: 62, calm: 48, social: 44, solitary: 46, orderly: 41, rebellious: 64, ambitious: 56, altruistic: 85, humorous: 29, disguised: 24, moral: 79, conformist: 18, execution: 83, romance: 22, dependency: 26, realism: 49, absurdity: 19, courage: 88, egoism: 34, empathy: 76, decisiveness: 74, stressTolerance: 69 }
+    traits: { rational: 54, emotional: 71, impulsive: 58, calm: 42, social: 36, solitary: 52, orderly: 36, rebellious: 59, ambitious: 48, altruistic: 74, humorous: 21, disguised: 19, moral: 71, conformist: 15, execution: 72, romance: 18, dependency: 21, realism: 43, absurdity: 14, courage: 79, egoism: 31, empathy: 66, decisiveness: 66, stressTolerance: 61 }
   },
   {
     id: "gojo",

@@ -282,6 +282,23 @@ img {
   margin-top: 24px;
 }
 
+.quiz-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 18px;
+}
+
+.quiz-back-btn {
+  min-height: 46px;
+  padding: 0 18px;
+}
+
+.quiz-back-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+}
+
 .option-btn {
   display: flex;
   align-items: center;

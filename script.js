@@ -69,6 +69,7 @@
   var startTestButton = document.getElementById("startTestButton");
   var jumpResultButton = document.getElementById("jumpResultButton");
   var restartButton = document.getElementById("restartButton");
+  var prevQuestionButton = document.getElementById("prevQuestionButton");
   var copyShareButton = document.getElementById("copyShareButton");
   var questionCounter = document.getElementById("questionCounter");
   var questionTitle = document.getElementById("questionTitle");
@@ -143,6 +144,7 @@
     progressBar.style.width = progress + "%";
     questionTitle.textContent = question.text;
     optionsList.innerHTML = "";
+    prevQuestionButton.disabled = state.currentQuestionIndex === 0;
 
     question.options.forEach(function (option, index) {
       var button = document.createElement("button");
@@ -181,6 +183,21 @@
         return;
       }
 
+      renderQuestion();
+    }, 180);
+  }
+
+  function goToPreviousQuestion() {
+    if (state.currentQuestionIndex === 0) {
+      return;
+    }
+
+    questionWrap.classList.add("is-leaving");
+
+    window.setTimeout(function () {
+      questionWrap.classList.remove("is-leaving");
+      state.currentQuestionIndex -= 1;
+      state.answers.pop();
       renderQuestion();
     }, 180);
   }
@@ -501,6 +518,7 @@
   startTestButton.addEventListener("click", resetQuiz);
   jumpResultButton.addEventListener("click", previewResults);
   restartButton.addEventListener("click", resetQuiz);
+  prevQuestionButton.addEventListener("click", goToPreviousQuestion);
   copyShareButton.addEventListener("click", copyShareText);
 
   renderQuestion();

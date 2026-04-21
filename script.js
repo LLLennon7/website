@@ -80,6 +80,14 @@
 
   var fallbackImage = createFallbackImage("角色", "#9aa4b2", "#616b78");
 
+  function getPreviewResults() {
+    return [
+      { character: getCharacterById("gilgamesh"), match: 41 },
+      { character: getCharacterById("homelander"), match: 34 },
+      { character: getCharacterById("gojo"), match: 25 }
+    ];
+  }
+
   function getCharacterById(id) {
     return window.characters.find(function (character) {
       return character.id === id;
@@ -257,21 +265,80 @@
 
   function finishQuiz() {
     progressBar.style.width = "100%";
-    state.currentResults = calculateMatchResults();
+    state.currentResults = createDisplayResults(calculateMatchResults());
     renderResults();
     showSection(resultSection);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function createDisplayResults(results) {
+    if (!results.length) {
+      return results;
+    }
+
+    var weights = results.map(function (item) {
+      return Math.max(1, 1000 - item.distance);
+    });
+
+    var totalWeight = weights.reduce(function (sum, weight) {
+      return sum + weight;
+    }, 0);
+
+    var percentages = weights.map(function (weight) {
+      return Math.max(1, Math.round((weight / totalWeight) * 100));
+    });
+
+    var total = percentages.reduce(function (sum, value) {
+      return sum + value;
+    }, 0);
+
+    while (total !== 100) {
+      if (total > 100) {
+        for (var i = percentages.length - 1; i >= 0 && total > 100; i -= 1) {
+          if (percentages[i] > 1) {
+            percentages[i] -= 1;
+            total -= 1;
+          }
+        }
+      } else {
+        for (var j = 0; j < percentages.length && total < 100; j += 1) {
+          percentages[j] += 1;
+          total += 1;
+        }
+      }
+    }
+
+    for (var k = 1; k < percentages.length; k += 1) {
+      if (percentages[k - 1] <= percentages[k]) {
+        var needed = percentages[k] - percentages[k - 1] + 1;
+        if (percentages[k] - needed >= 1) {
+          percentages[k - 1] += needed;
+          percentages[k] -= needed;
+        }
+      }
+    }
+
+    total = percentages.reduce(function (sum, value) {
+      return sum + value;
+    }, 0);
+    if (total !== 100) {
+      percentages[percentages.length - 1] += 100 - total;
+    }
+
+    return results.map(function (item, index) {
+      return {
+        character: item.character,
+        distance: item.distance,
+        match: percentages[index]
+      };
+    });
   }
 
   function renderResults() {
     resultCards.innerHTML = "";
 
     var cardsData = state.previewingResults
-      ? [
-          { character: getCharacterById("gilgamesh"), match: 91 },
-          { character: getCharacterById("homelander"), match: 86 },
-          { character: getCharacterById("gojo"), match: 82 }
-        ]
+      ? getPreviewResults()
       : state.currentResults;
 
     cardsData.forEach(function (item, index) {
@@ -314,11 +381,7 @@
 
   function copyShareText() {
     var results = state.previewingResults
-      ? [
-          { character: getCharacterById("gilgamesh"), match: 91 },
-          { character: getCharacterById("homelander"), match: 86 },
-          { character: getCharacterById("gojo"), match: 82 }
-        ]
+      ? getPreviewResults()
       : state.currentResults;
 
     if (!results.length) {

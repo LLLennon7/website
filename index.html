@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测测你最像哪个虚拟角色</title>
+  <meta name="description" content="12 道娱乐人格题，测出你的主角色、第二人格和隐藏人格。纯静态网页，手机也能顺手玩。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="ad-banner-top ad-slot">首页顶部广告位</div>
+      <div class="hero-copy">
+        <p class="eyebrow">娱乐向人格匹配测试</p>
+        <h1>测测你最像哪个虚拟角色</h1>
+        <p class="hero-text">
+          用 12 道代入感题目，快速生成你的角色人格画像。
+          测试完成后，会给出你的主角色、第二人格和隐藏人格。
+        </p>
+        <div class="hero-actions">
+          <button id="startTestButton" class="primary-btn">开始测试</button>
+          <button id="jumpResultButton" class="ghost-btn" type="button">先看看结果样式</button>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-card">
+          <span>支持展示</span>
+          <strong>角色图片</strong>
+          <small>支持本地路径、远程链接、占位图</small>
+        </div>
+        <div class="hero-panel-card">
+          <span>输出结果</span>
+          <strong>3 个角色</strong>
+          <small>主角色 / 第二人格 / 隐藏人格</small>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="homeSection" class="section is-visible">
+        <div class="section-head">
+          <h2>热门角色预览</h2>
+          <p>先看看测试中会出现的一部分角色，风格跨动漫、电影、美剧。</p>
+        </div>
+        <div id="showcaseGrid" class="showcase-grid"></div>
+        <div class="ad-banner-bottom ad-slot">首页底部广告位</div>
+      </section>
+
+      <section id="quizSection" class="section" aria-hidden="true">
+        <div class="quiz-card">
+          <div class="quiz-topbar">
+            <span id="questionCounter" class="quiz-counter">第 1 / 12 题</span>
+            <span id="questionHint" class="quiz-hint">凭第一反应选就行</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+          <div id="questionWrap" class="question-wrap">
+            <h2 id="questionTitle" class="question-title"></h2>
+            <div id="optionsList" class="options-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultSection" class="section" aria-hidden="true">
+        <div class="result-header">
+          <p class="eyebrow">测试完成</p>
+          <h2>你的角色人格结果已生成</h2>
+          <p class="result-intro">以下 3 个结果分别代表你最外显的一面、次级性格和不容易被看见的隐藏人格。</p>
+        </div>
+
+        <div id="resultCards" class="result-cards"></div>
+
+        <div class="ad-result-middle ad-slot">结果页中部广告位</div>
+
+        <div class="share-box">
+          <h3>快把你的结果发给朋友看看</h3>
+          <p>你和谁最像？把结果截图分享出去，看看朋友会不会认同。</p>
+          <button id="copyShareButton" class="ghost-btn" type="button">复制分享文案</button>
+        </div>
+
+        <div class="result-actions">
+          <button id="restartButton" class="primary-btn">重新测试</button>
+        </div>
+
+        <div class="ad-result-bottom ad-slot">结果页底部广告位</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="characters.js"></script>
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+image.png

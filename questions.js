@@ -8,7 +8,7 @@ window.questions = [
       { text: "懒得解释，直接走人，没必要浪费情绪", effects: { solitary: 4, calm: 3, rational: 2, orderly: 1, realism: 2, egoism: 1, stressTolerance: 1 } },
       { text: "表面打圆场，背后悄悄让自己变强", effects: { disguised: 3, execution: 4, ambitious: 3, calm: 2, realism: 1, decisiveness: 2 } },
       { text: "笑一下把场子弄得更怪，让对方先接不住", effects: { humorous: 3, absurdity: 3, rebellious: 2, courage: 1, stressTolerance: 1 } },
-      { text: "先观察一下对方到底为什么这么做，再决定出不出手", effects: { empathy: 2, calm: 2, rational: 2, decisiveness: 1 } }
+      { text: "我会当场给自己脑补一整季复仇剧，连他十年后的下场都想好了", effects: { absurdity: 4, ambitious: 2, emotional: 2, disguised: 1 } }
     ]
   },
   {
@@ -20,7 +20,7 @@ window.questions = [
       { text: "先帮他补一把，至少别让全队崩盘", effects: { altruistic: 4, moral: 3, social: 2, emotional: 2, empathy: 4 } },
       { text: "我会自己做掉关键部分，不想被别人拖慢", effects: { solitary: 4, execution: 4, ambitious: 2, calm: 1, realism: 2, egoism: 3, stressTolerance: 2 } },
       { text: "先观察谁是真掉链子，别急着下判断", effects: { rational: 2, calm: 3, empathy: 2, disguised: 1 } },
-      { text: "我会私下单聊，尽量不让场面太难看", effects: { empathy: 3, social: 2, disguised: 1, moral: 1 } }
+      { text: "我会直接把他踢出团队，再顺手写一份三页纸罪状贴群里", effects: { decisiveness: 3, rebellious: 2, execution: 2, egoism: 2 } }
     ]
   },
   {
@@ -32,7 +32,7 @@ window.questions = [
       { text: "看是为了谁，如果能保护重要的人，我会破例", effects: { emotional: 3, altruistic: 4, moral: 2, rebellious: 2, empathy: 3 } },
       { text: "我会先判断代价，能两边都保最好", effects: { calm: 3, rational: 4, disguised: 2, execution: 2, decisiveness: 1 } },
       { text: "规则和结果都太死了，我更看现场感觉", effects: { absurdity: 2, emotional: 2, impulsive: 2, rebellious: 1 } },
-      { text: "我会先看哪种选择最不容易伤到人", effects: { empathy: 3, moral: 2, calm: 1 } }
+      { text: "我会现场重写规则，宣布从现在开始我说了算", effects: { rebellious: 3, egoism: 2, courage: 2, absurdity: 2 } }
     ]
   },
   {
@@ -44,7 +44,7 @@ window.questions = [
       { text: "计划被蠢办法打断，效率瞬间归零", effects: { rational: 3, orderly: 3, execution: 4, calm: 1, stressTolerance: 1 } },
       { text: "被迫配合一套我根本不认同的规矩", effects: { rebellious: 4, solitary: 2, impulsive: 2, moral: 1 } },
       { text: "场面太压抑、太假，让我觉得非常荒唐", effects: { absurdity: 3, emotional: 2, rebellious: 2 } },
-      { text: "压力一下子全压到我身上，脑子会直接卡住", effects: { stressTolerance: 0, emotional: 3, dependency: 1 } }
+      { text: "我会像高压锅一样直接炸开，顺便把全场气氛一起炸烂", effects: { emotional: 4, impulsive: 3, absurdity: 2, stressTolerance: 0 } }
     ]
   },
   {
@@ -56,7 +56,7 @@ window.questions = [
       { text: "继续对他好，反正我认定了就不轻易退", effects: { romance: 4, dependency: 4, altruistic: 3, execution: 2, emotional: 2, empathy: 2 } },
       { text: "立刻抽离，感情不能影响我节奏", effects: { rational: 3, ambitious: 2, calm: 3, solitary: 2, egoism: 3, decisiveness: 3 } },
       { text: "先装作无所谓，但会忍不住观察他后续反应", effects: { disguised: 3, dependency: 2, emotional: 2, empathy: 1, decisiveness: 0 } },
-      { text: "我会先问清楚是不是我误会了，不想太快下结论", effects: { empathy: 2, rational: 2, calm: 1 } }
+      { text: "我会深夜发一长串小作文，发完拉黑，五分钟后再偷偷加回来", effects: { emotional: 4, romance: 2, absurdity: 3, decisiveness: 0 } }
     ]
   },
   {
@@ -68,7 +68,7 @@ window.questions = [
       { text: "只要是朋友需要，我大概率会去", effects: { altruistic: 4, social: 3, emotional: 2, dependency: 2, empathy: 3 } },
       { text: "我通常会找借口拒绝，太消耗人了", effects: { solitary: 4, calm: 2, orderly: 2, egoism: 2 } },
       { text: "看是谁叫我，如果是重要的人我会改主意", effects: { dependency: 2, empathy: 2, social: 1, emotional: 1 } },
-      { text: "如果这件事能让我顺便赚到经验，我会更愿意去", effects: { ambitious: 2, egoism: 2, realism: 1 } }
+      { text: "我会问这事够不够离谱，够离谱我甚至愿意穿着拖鞋就冲过去", effects: { absurdity: 4, impulsive: 3, courage: 1, humorous: 1 } }
     ]
   },
   {
@@ -80,7 +80,7 @@ window.questions = [
       { text: "用玩笑和轻松态度糊过去", effects: { humorous: 4, social: 2, disguised: 2, absurdity: 3 } },
       { text: "谁碰我底线，我就直接反击", effects: { impulsive: 3, rebellious: 3, moral: 2, execution: 2, courage: 3, egoism: 2, decisiveness: 3 } },
       { text: "先确认身边有没有可信的人，再决定怎么动", effects: { dependency: 3, calm: 2, empathy: 1, decisiveness: 0 } },
-      { text: "把注意力转回现实任务上，不给情绪继续发酵的机会", effects: { execution: 2, realism: 2, stressTolerance: 2 } }
+      { text: "我会先把自己活成铜墙铁壁，主打一个谁都别想碰到我半点情绪", effects: { stressTolerance: 3, solitary: 2, egoism: 2, disguised: 1 } }
     ]
   },
   {
@@ -92,7 +92,7 @@ window.questions = [
       { text: "找队友一起搞，效率和气氛都更重要", effects: { social: 4, altruistic: 2, execution: 2, emotional: 1, empathy: 1 } },
       { text: "先看值不值得我投入，没必要就算了", effects: { calm: 3, rational: 2, solitary: 2, ambitious: 1, egoism: 2 } },
       { text: "我会先想有没有更怪但更省力的捷径", effects: { absurdity: 2, rational: 1, egoism: 1, realism: 1 } },
-      { text: "我会先确认这件事会不会拖累到身边重要的人", effects: { empathy: 2, dependency: 1, realism: 1 } }
+      { text: "我会直接开幻想外挂，先默认自己能一边赢一边帅一边全员存活", effects: { absurdity: 4, ambitious: 2, emotional: 1, realism: 0 } }
     ]
   },
   {
@@ -104,7 +104,7 @@ window.questions = [
       { text: "看情况，如果对我有利我就上", effects: { ambitious: 3, disguised: 2, social: 2, rational: 2 } },
       { text: "我会有点紧绷，但硬着头皮也能顶住", effects: { emotional: 2, execution: 3, moral: 1, romance: 1, dependency: 2, stressTolerance: 2 } },
       { text: "我会先看大家的情绪，再决定自己怎么表现", effects: { empathy: 3, social: 2, disguised: 1 } },
-      { text: "如果这波关注能帮我推进目标，我会马上切到营业模式", effects: { ambitious: 2, execution: 1, egoism: 2 } }
+      { text: "我会把这一刻当成个人出道现场，连呼吸都开始设计机位", effects: { egoism: 3, social: 2, absurdity: 2, humorous: 1 } }
     ]
   },
   {
@@ -116,7 +116,7 @@ window.questions = [
       { text: "我会帮，但会用自己的方式掌控局面", effects: { disguised: 2, execution: 3, ambitious: 2, rational: 2 } },
       { text: "如果这事很蠢，我会直接拒绝", effects: { solitary: 2, rebellious: 2, rational: 2, moral: 1, egoism: 2 } },
       { text: "我会先感受一下，他到底是不是真的很难", effects: { empathy: 3, emotional: 2, calm: 1 } },
-      { text: "我会看这次帮忙会不会让我自己也付出太大代价", effects: { realism: 2, egoism: 2, rational: 1 } }
+      { text: "我会先算一笔离谱的账，精确到帮他这次会不会折我三天阳寿", effects: { realism: 2, egoism: 2, absurdity: 2, rational: 1 } }
     ]
   },
   {
@@ -128,7 +128,7 @@ window.questions = [
       { text: "聪明、有脑子、能跟我过招的人", effects: { rational: 3, ambitious: 2, romance: 2, disguised: 1 } },
       { text: "有趣、会接梗、相处不累的人", effects: { humorous: 3, social: 2, romance: 2, emotional: 1, absurdity: 2 } },
       { text: "会理解我情绪、让我不用解释太多的人", effects: { empathy: 4, dependency: 2, romance: 2 } },
-      { text: "很有主见，关键时刻能替我拍板的人", effects: { dependency: 2, decisiveness: 2, romance: 1 } }
+      { text: "有病娇感、压迫感和一点毁灭倾向的，我会觉得很带劲", effects: { absurdity: 3, dependency: 2, romance: 2, rebellious: 1 } }
     ]
   },
   {
@@ -140,7 +140,7 @@ window.questions = [
       { text: "敢冲敢改，不被规则拿捏", effects: { rebellious: 4, impulsive: 3, ambitious: 2, courage: 4, decisiveness: 2 } },
       { text: "外表轻松，但真正出手一定有效", effects: { humorous: 2, disguised: 3, execution: 3, social: 2, absurdity: 2 } },
       { text: "先把自己活明白，别被别人随便牵着走", effects: { egoism: 4, realism: 2, calm: 1 } },
-      { text: "再难也别一下就被现实压垮", effects: { stressTolerance: 4, courage: 1, calm: 2 } }
+      { text: "就算天塌下来，我也要先把姿势摆得像海报封面一样好看", effects: { stressTolerance: 3, absurdity: 2, courage: 1, egoism: 1 } }
     ]
   },
   {
@@ -152,7 +152,7 @@ window.questions = [
       { text: "看能不能换个离谱一点的玩法破局", effects: { absurdity: 4, humorous: 2, rational: 1 } },
       { text: "如果重要的人也在，我会更想拼一下", effects: { altruistic: 2, dependency: 2, courage: 2, emotional: 2 } },
       { text: "我会先看这事最后到底对我有没有好处", effects: { egoism: 4, realism: 2, ambitious: 1 } },
-      { text: "我会先让自己稳住，不想在情绪上头时做决定", effects: { calm: 2, stressTolerance: 3, rational: 1 } }
+      { text: "我会一边发疯一边往前冲，主打一个成了封神输了发帖", effects: { courage: 2, absurdity: 3, impulsive: 2, stressTolerance: 1 } }
     ]
   },
   {
@@ -164,7 +164,7 @@ window.questions = [
       { text: "总得有人先站出来", effects: { courage: 4, moral: 2, altruistic: 2, decisiveness: 2 } },
       { text: "理想和现实，最好都别完全放弃", effects: { rational: 2, realism: 2, courage: 1, emotional: 1 } },
       { text: "先别急着做英雄，我也得照顾自己的感受", effects: { egoism: 3, calm: 2, empathy: 1 } },
-      { text: "真正厉害的人，是压力来了也不乱套", effects: { stressTolerance: 4, execution: 1, calm: 1 } }
+      { text: "世界都这样了，不如先把场面搞得更大一点", effects: { absurdity: 4, rebellious: 2, humorous: 1, realism: 0 } }
     ]
   },
   {
@@ -176,7 +176,7 @@ window.questions = [
       { text: "我会陪，但不会让自己被拖进去太深", effects: { calm: 2, egoism: 2, dependency: 1 } },
       { text: "如果他总这样，我会有点烦", effects: { egoism: 4, solitary: 2 } },
       { text: "我会先观察他真正想要安慰还是想要答案", effects: { empathy: 3, rational: 2, calm: 1 } },
-      { text: "如果我自己状态也很差，我会坦白说现在接不住", effects: { egoism: 2, realism: 2, stressTolerance: 1 } }
+      { text: "我会先跟他一起发疯五分钟，再假装自己其实很会处理情绪", effects: { absurdity: 3, empathy: 2, emotional: 2, disguised: 1 } }
     ]
   },
   {
@@ -188,7 +188,7 @@ window.questions = [
       { text: "看那个人值不值得", effects: { realism: 3, egoism: 2, rational: 2 } },
       { text: "我会犹豫，但最后大概率还是会帮", effects: { empathy: 2, emotional: 2, moral: 2 } },
       { text: "我会先确认有没有人能跟我一起扛这个风险", effects: { dependency: 3, empathy: 1, realism: 1 } },
-      { text: "如果时间很紧，我会逼自己立刻选一边", effects: { decisiveness: 4, courage: 1, stressTolerance: 1 } }
+      { text: "我会先掷硬币，硬币落地前再靠直觉把它的命运推翻", effects: { decisiveness: 2, absurdity: 3, impulsive: 2, courage: 1 } }
     ]
   },
   {
@@ -200,7 +200,7 @@ window.questions = [
       { text: "先试着两边都保住", effects: { emotional: 2, romance: 2, dependency: 2, realism: 1, execution: 1, decisiveness: 0 } },
       { text: "看对方愿不愿意配合我", effects: { dependency: 4, disguised: 2, empathy: 1, egoism: 1, decisiveness: 0 } },
       { text: "我会拖着不选，等现实替我决定", effects: { calm: 1, dependency: 2, execution: 0, courage: 0, realism: 0, decisiveness: 0, stressTolerance: 0 } },
-      { text: "我会先问自己，十年后我更不想后悔失去哪边", effects: { rational: 2, realism: 2, romance: 1, decisiveness: 1 } }
+      { text: "我会试图异地、升职、热恋、逆袭四手抓四手都要硬，直到把自己活成连续剧", effects: { absurdity: 4, romance: 2, ambitious: 2, stressTolerance: 2 } }
     ]
   },
   {

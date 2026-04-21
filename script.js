@@ -237,13 +237,16 @@
 
   function calculateMatchResults() {
     var userProfile = calculateUserProfile();
-    var maxDistance = Object.keys(DIMENSIONS).length * 100;
+    var weights = buildDimensionWeights(userProfile);
+    var maxDistance = Object.keys(DIMENSIONS).reduce(function (sum, key) {
+      return sum + weights[key] * 100;
+    }, 0);
 
     return window.characters
       .map(function (character) {
         var distance = Object.keys(DIMENSIONS).reduce(function (sum, key) {
           var traitValue = typeof character.traits[key] === "number" ? character.traits[key] : 0;
-          return sum + Math.abs(userProfile[key] - traitValue);
+          return sum + Math.abs(userProfile[key] - traitValue) * weights[key];
         }, 0);
 
         var match = Math.max(55, Math.round(100 - (distance / maxDistance) * 100));
@@ -261,6 +264,30 @@
         return b.match - a.match;
       })
       .slice(0, 3);
+  }
+
+  function buildDimensionWeights(userProfile) {
+    var weights = {};
+    var keys = Object.keys(DIMENSIONS);
+    var maxScore = keys.reduce(function (max, key) {
+      return Math.max(max, userProfile[key] || 0);
+    }, 0);
+    var total = 0;
+
+    keys.forEach(function (key) {
+      var score = userProfile[key] || 0;
+      // 用户强项权重更高，但最高只到最低的 1.7 倍，避免结果过于失真。
+      var normalized = maxScore > 0 ? score / maxScore : 0;
+      var rawWeight = 1 + normalized * 0.7;
+      weights[key] = rawWeight;
+      total += rawWeight;
+    });
+
+    keys.forEach(function (key) {
+      weights[key] = weights[key] / total;
+    });
+
+    return weights;
   }
 
   function finishQuiz() {

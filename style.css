@@ -215,7 +215,7 @@ img {
 }
 
 .ad-slot {
-  display: grid;
+  display: none;
   place-items: center;
   min-height: 88px;
   margin: 18px 0 0;

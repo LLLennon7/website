@@ -29,6 +29,58 @@ function escapeXml(text) {
     .replace(/'/g, "&apos;");
 }
 
+var CHARACTER_IMAGE_MAP = {
+  "walter-white": "images/walter-white.jpg",
+  "sheldon": "images/sheldon.jpg",
+  "joker": "images/joker.jpg",
+  "iron-man": "images/iron-man.jpg",
+  "sherlock": "images/sherlock.jpg",
+  "saul": "images/saul.jpg",
+  "luffy": "images/luffy.jpg",
+  "naruto": "images/naruto.jpg",
+  "sasuke": "images/sasuke.jpg",
+  "ichigo": "images/ichigo.jpg",
+  "gojo": "images/gojo.jpg",
+  "shinji": "images/shinji.jpg",
+  "light": "images/light.jpg",
+  "yuji": "images/yuji.jpg",
+  "eren": "images/eren.jpg",
+  "deadpool": "images/deadpool.jpg",
+  "batman": "images/batman.jpg",
+  "jack-sparrow": "images/jack-sparrow.jpg",
+  "house": "images/house.jpg",
+  "l": "images/L.jpg",
+  "lelouch": "images/lelouch.jpg",
+  "the-deep": "images/the-deep.jpg",
+  "homelander": "images/homelander.jpg",
+  "sukuna": "images/sukuna.jpg",
+  "invincible": "images/invincible.jpg",
+  "omni_man": "images/omni_man.jpg",
+  "gilgamesh": "images/gilgamesh.jpg",
+  "muzan": "images/muzan.jpg",
+  "tanjiro": "images/tanjiro.jpg",
+  "denji": "images/denji.jpg",
+  "makima": "images/makima.jpg",
+  "captain_america": "images/captain_america.jpg",
+  "conan": "images/conan.jpg",
+  "kaito_kid": "images/kaito_kid.jpg",
+  "count_of_monte_cristo": "images/count_of_monte_cristo.jpg",
+  "joseph_joestar": "images/joseph_joestar.jpg",
+  "hannibal_lecter": "images/hannibal_lecter.jpg",
+  "peter_griffin": "images/peter_griffin.png",
+  "brian_griffin": "images/brian_griffin.jpg",
+  "sonny_hayes": "images/sonny_hayes.jpg",
+  "shaun_murphy": "images/shaun_murphy.jpg",
+  "leon_kennedy": "images/leon_kennedy.jpg",
+  "ada_wong": "images/ada_wong.jpg",
+  "chris_redfield": "images/chris_redfield.jpg",
+  "dio_brando": "images/dio_brando.jpg",
+  "yoshikage_kira": "images/yoshikage_kira.jpg",
+  "elon_musk": "images/elon_musk.jpg",
+  "tohsaka_rin": "images/tohsaka_rin.jpg",
+  "asuka_langley": "images/asuka_langley.jpg"
+};
+
 window.characters = [
   {
     id: "walter-white",
@@ -54,7 +106,7 @@ window.characters = [
     originalName: "Joker",
     source: "蝙蝠侠：黑暗骑士",
     image: createCharacterPlaceholder("小丑", "#7b2d8e", "#1f102f"),
-    description: "你不爱走常规路线，喜欢打乱牌桌和既定规则，脑回路跳脱，危险感和魅力并存。",
+    description: "不爱走常规路线，喜欢打乱牌桌和既定规则，脑回路跳脱，危险感和魅力并存。",
     traits: { rational: 58, emotional: 72, impulsive: 85, calm: 32, social: 79, solitary: 46, orderly: 4, rebellious: 98, ambitious: 81, altruistic: 4, humorous: 80, disguised: 91, moral: 2, conformist: 1, execution: 67, romance: 8, dependency: 5, realism: 19, absurdity: 97, courage: 74, egoism: 94, empathy: 6, decisiveness: 89, stressTolerance: 71 }
   },
   {
@@ -147,7 +199,7 @@ window.characters = [
     description: "目标感强，脑子转得快，擅长布局和伪装，既有精英感，也有极强的掌控欲。",
     traits: { rational: 94, emotional: 24, impulsive: 21, calm: 86, social: 84, solitary: 58, orderly: 73, rebellious: 52, ambitious: 98, altruistic: 12, humorous: 8, disguised: 95, moral: 18, conformist: 39, execution: 97, romance: 5, dependency: 9, realism: 91, absurdity: 14, courage: 72, egoism: 97, empathy: 8, decisiveness: 96, stressTolerance: 82 }
   },
-  按照这个来
+  
   {
     id: "yuji",
     name: "虎杖悠仁",
@@ -355,7 +407,7 @@ window.characters = [
       decisiveness: 68,
       stressTolerance: 64
     }
-  }
+  },
   {
     id: "omni_man",
     name: "全能侠",
@@ -389,7 +441,7 @@ window.characters = [
       decisiveness: 99,
       stressTolerance: 99
     }
-  }
+  },
   {
     id: "gilgamesh",
     name: "金闪闪",
@@ -423,14 +475,14 @@ window.characters = [
       decisiveness: 95,
       stressTolerance: 93
     }
-  }
+  },
   {
     id: "muzan",
     name: "无惨",
     originalName: "Muzan Kibutsuji",
     source: "鬼灭之刃",
     image: createCharacterPlaceholder("无惨", "#6b1f2a", "#121212"),
-    description: "你控制欲强，警惕心重，做事狠且很少信任别人。你给人的感觉危险、压迫、难以接近。",
+    description: "控制欲强，警惕心重，做事狠且很少信任别人。你给人的感觉危险、压迫、难以接近。",
     traits: {
       rational: 84,
       emotional: 41,
@@ -491,7 +543,7 @@ window.characters = [
       decisiveness: 84,
       stressTolerance: 91
     }
-  }
+  },
   {
     id: "denji",
     name: "电次",
@@ -559,7 +611,7 @@ window.characters = [
       decisiveness: 98,
       stressTolerance: 98
     }
-  }
+  },
   {
     id: "captain_america",
     name: "美国队长",
@@ -593,7 +645,7 @@ window.characters = [
       decisiveness: 92,
       stressTolerance: 95
     }
-  }
+  },
   {
     id: "conan",
     name: "柯南",
@@ -661,7 +713,7 @@ window.characters = [
       decisiveness: 85,
       stressTolerance: 88
     }
-  }
+  },
   {
     id: "count_of_monte_cristo",
     name: "基督山伯爵",
@@ -695,7 +747,7 @@ window.characters = [
       decisiveness: 95,
       stressTolerance: 97
     }
-  }
+  },
   {
     id: "joseph_joestar",
     name: "乔瑟夫·乔斯达",
@@ -729,7 +781,7 @@ window.characters = [
       decisiveness: 82,
       stressTolerance: 85
     }
-  }
+  },
   {
     id: "hannibal_lecter",
     name: "汉尼拔",
@@ -763,14 +815,14 @@ window.characters = [
       decisiveness: 96,
       stressTolerance: 99
     }
-  }
+  },
   {
     id: "peter_griffin",
     name: "皮特·格里芬",
     originalName: "Peter Griffin",
     source: "恶搞之家",
     image: createCharacterPlaceholder("皮特", "#d8d8d8", "#4f8f5b"),
-    description: "又蠢又坏的代名词。",
+    description: "你是又蠢又坏的代名词。",
     traits: {
       rational: 14,
       emotional: 81,
@@ -831,7 +883,7 @@ window.characters = [
       decisiveness: 47,
       stressTolerance: 39
     }
-  }
+  },
   {
     id: "sonny_hayes",
     name: "桑尼·海耶斯",
@@ -865,7 +917,7 @@ window.characters = [
       decisiveness: 95,
       stressTolerance: 99
     }
-  }
+  },
   {
     id: "shaun_murphy",
     name: "肖恩医生",
@@ -899,7 +951,7 @@ window.characters = [
       decisiveness: 84,
       stressTolerance: 86
     }
-  }
+  },
   {
     id: "leon_kennedy",
     name: "李昂·肯尼迪",
@@ -1001,7 +1053,7 @@ window.characters = [
       decisiveness: 96,
       stressTolerance: 99
     }
-  }
+  },
   {
     id: "dio_brando",
     name: "迪奥",
@@ -1069,6 +1121,108 @@ window.characters = [
       decisiveness: 91,
       stressTolerance: 98
     }
+  },
+  {
+    id: "elon_musk",
+    name: "一龙·马斯克",
+    originalName: "Elon Musk",
+    source: "现实人物",
+    image: createCharacterPlaceholder("一龙", "#5b6673", "#1f2430"),
+    description: "你点子多、行动猛、抗压强，喜欢折腾大项目，也不爱按常规出牌。你给人的感觉强势、跳脱，还有种停不下来的折腾劲。",
+    traits: {
+      rational: 84,
+      emotional: 61,
+      impulsive: 74,
+      calm: 53,
+      social: 72,
+      solitary: 41,
+      orderly: 37,
+      rebellious: 95,
+      ambitious: 100,
+      altruistic: 34,
+      humorous: 52,
+      disguised: 29,
+      moral: 31,
+      conformist: 2,
+      execution: 99,
+      romance: 14,
+      dependency: 9,
+      realism: 88,
+      absurdity: 57,
+      courage: 97,
+      egoism: 94,
+      empathy: 23,
+      decisiveness: 98,
+      stressTolerance: 96
+    }
+  },
+  {
+    id: "tohsaka_rin",
+    name: "远坂凛",
+    originalName: "Rin Tohsaka",
+    source: "Fate/stay night",
+    image: createCharacterPlaceholder("远坂凛", "#c63f4a", "#1f2d63"),
+    description: "聪明、要强、行动利落，表面上很稳，其实情绪和胜负心都不低, 但容易关键时候掉链子",
+    traits: {
+      rational: 88,
+      emotional: 67,
+      impulsive: 48,
+      calm: 76,
+      social: 73,
+      solitary: 36,
+      orderly: 74,
+      rebellious: 57,
+      ambitious: 82,
+      altruistic: 71,
+      humorous: 46,
+      disguised: 58,
+      moral: 79,
+      conformist: 34,
+      execution: 86,
+      romance: 41,
+      dependency: 22,
+      realism: 81,
+      absurdity: 18,
+      courage: 84,
+      egoism: 44,
+      empathy: 68,
+      decisiveness: 87,
+      stressTolerance: 83
+    }
+  },
+  {
+    id: "asuka_langley",
+    name: "明日香",
+    originalName: "Asuka Langley Soryu",
+    source: "新世纪福音战士",
+    image: createCharacterPlaceholder("明日香", "#c94b3c", "#f0b23f"),
+    description: "要强、嘴硬、好胜心重，表面很凶，其实情绪很敏感。你给人的感觉亮眼、带刺，也很难轻易服软。",
+    traits: {
+      rational: 62,
+      emotional: 91,
+      impulsive: 73,
+      calm: 39,
+      social: 76,
+      solitary: 44,
+      orderly: 58,
+      rebellious: 71,
+      ambitious: 88,
+      altruistic: 41,
+      humorous: 37,
+      disguised: 54,
+      moral: 49,
+      conformist: 17,
+      execution: 79,
+      romance: 42,
+      dependency: 74,
+      realism: 57,
+      absurdity: 29,
+      courage: 84,
+      egoism: 67,
+      empathy: 46,
+      decisiveness: 81,
+      stressTolerance: 52
+    }
   }
 
 
@@ -1076,3 +1230,9 @@ window.characters = [
 
 
 ];
+
+window.characters.forEach(function (character) {
+  if (CHARACTER_IMAGE_MAP[character.id]) {
+    character.image = CHARACTER_IMAGE_MAP[character.id];
+  }
+});

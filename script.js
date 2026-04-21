@@ -289,7 +289,7 @@
       content.innerHTML =
         '<div class="result-slot-label">' + slot.title + "</div>" +
         '<h3 class="result-name">' + item.character.name + "</h3>" +
-        '<div class="result-source">来源作品：' + item.character.source + "</div>" +
+        '<div class="result-source">虚拟人物来自：' + item.character.source + "</div>" +
         '<div class="match-line"><span class="match-value">' + item.match + '%</span><div class="match-track"><div class="match-fill" style="width:' + fillWidth + '%"></div></div></div>' +
         '<p class="result-description">' + item.character.description + "</p>";
 

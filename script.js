@@ -54,7 +54,6 @@
   var jumpResultButton = document.getElementById("jumpResultButton");
   var restartButton = document.getElementById("restartButton");
   var copyShareButton = document.getElementById("copyShareButton");
-  var showcaseGrid = document.getElementById("showcaseGrid");
   var questionCounter = document.getElementById("questionCounter");
   var questionTitle = document.getElementById("questionTitle");
   var questionHint = document.getElementById("questionHint");
@@ -92,33 +91,6 @@
       var isTarget = node === section;
       node.classList.toggle("is-visible", isTarget);
       node.setAttribute("aria-hidden", String(!isTarget));
-    });
-  }
-
-  function setupShowcase() {
-    showcaseGrid.innerHTML = "";
-    window.characters.slice(0, 8).forEach(function (character) {
-      var card = document.createElement("article");
-      card.className = "showcase-card";
-
-      var image = document.createElement("img");
-      image.className = "showcase-image";
-      image.src = character.image || fallbackImage;
-      image.alt = character.name + "角色图片";
-      image.onerror = function () {
-        image.onerror = null;
-        image.src = fallbackImage;
-      };
-
-      var body = document.createElement("div");
-      body.className = "showcase-body";
-      body.innerHTML =
-        '<div class="showcase-name">' + character.name + '</div>' +
-        '<div class="meta-line">' + character.source + "</div>";
-
-      card.appendChild(image);
-      card.appendChild(body);
-      showcaseGrid.appendChild(card);
     });
   }
 
@@ -350,6 +322,5 @@
   restartButton.addEventListener("click", resetQuiz);
   copyShareButton.addEventListener("click", copyShareText);
 
-  setupShowcase();
   renderQuestion();
 })();
